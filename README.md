@@ -1,16 +1,29 @@
-# ApprovalMax_test
-Technical task from ApprovalMax
+# Canoe_technical_task
+Technical task from Canoe
 
 ## Task Description
 
-You have a dataset. 
-Please, do the following:
-  - Get a dataframe pd.util.testing.makeDataFrame() - df
-  - Make a column ‘date’ depending on the index value. 
-    - Day equals the last letter index (no matter which register the letter is). A/a == 1, B/b == 2 etc. 
-    - Month equals the number of the row (sorted by the index ascending) in cycling mode 1 to 12.
-    - If the number of vowels is greater than the number of consonants then the year should be 2021, otherwise - 2022.
-  - Make a pivot table showing dynamics of every column by months (agg is sum). + Charts for every column - save into df_months1
-  - Make a full date list between min dataframe date and max dataframe date to include dates without values and make a pivot table with dates as columns and current columns as index (agg is sum). Save into df_days. Drop all columns with even-numbered days. - save into df_days1
-  - df_days - delete row with minimal sum of all elements and take only every third column as a result. Save into df_days2.
-  - Write an ETL class structure. Imagine the situation that you have an abstract API (let’s say https://blahblahblah.com/api/v1/?reportId=123) to download the data from and a DWH to upload data to. Please prepare a structure of python classes how you’d do the ETL. Logic of every method may be described with comment (without a code). But you should mention libs that’d be used.
+Using the given data on passing the levels of players in match3 games and the possibility of obtaining a task:
+
+### Task 1
+
+Assume a metric describing the levels of levels, and calculate it.
+
+### Task 2
+
+Based on the results of the tasks received, the levels are divided into groups according to complexity and conclusions are drawn about the distribution of difficult levels in the game.
+
+### Task 3
+
+Calculate the "funnel" of passing the levels of a new user after installing the game.
+
+## Description of the files
+
+The input data is the **plr_smpl_attempts.csv** file containing the event log for a certain period of time for the first 500 levels in the game.
+
+The file contains four columns:
+
+  - uid - unique player id;
+  - action - 'completed' for a successful attempt to pass the level, 'failed' for an unsuccessful one;
+  - level - the level at which the event occurred;
+  - event_time - event_time/1000 is the unix timestamp of the time the event was received
